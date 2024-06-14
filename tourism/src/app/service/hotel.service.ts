@@ -10,6 +10,7 @@ export class HotelService {
   private http=inject(HttpClient)
   public url:string="http://localhost:8000/"
   constructor() { }
+  hola:string=""
 
   public getTopByIndicadorHotel(municipio:string):Observable<Hoteles[]>{
     return this.http.get<Hoteles[]>(this.url+"getHotelesIn?municipio="+municipio);
