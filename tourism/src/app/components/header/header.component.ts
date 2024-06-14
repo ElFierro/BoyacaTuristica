@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  isMenuHidden = true;
 
+  toggleMenu() {
+    this.isMenuHidden = !this.isMenuHidden;
+  }
 }
