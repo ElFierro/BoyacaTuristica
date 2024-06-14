@@ -12,10 +12,10 @@ export class HotelService {
   constructor() { }
   hola:string=""
 
-  public getTopByIndicadorHotel(municipio:string):Observable<Hoteles[]>{
+  public getHotelesIn(municipio:string):Observable<Hoteles[]>{
     return this.http.get<Hoteles[]>(this.url+"getHotelesIn?municipio="+municipio);
   }
-  public getTopByIndicadorAgencias(municipio:string):Observable<Hoteles[]>{
+  public getAgenciasIn(municipio:string):Observable<Hoteles[]>{
     return this.http.get<Hoteles[]>(this.url+"getAgenciasIn?municipio="+municipio);
   }
 
