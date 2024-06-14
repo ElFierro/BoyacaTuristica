@@ -11,10 +11,11 @@
       </div>
       <nav id="menu" [class.hidden]="isMenuHidden" class="lg:flex lg:items-center lg:w-auto w-full">
           <div class="lg:flex lg:space-x-4">
-              <a href="#inicio" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Inicio</a>
-              <a href="#destinos" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Destinos</a>
-              <a href="#actividades" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Actividades</a>
-              <a href="#contacto" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Contacto</a>
+            <a [routerLink]="[ '/home' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Inicio</a>
+            <a [routerLink]="[ '/hotel' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Hoteles</a>
+            <a [routerLink]="[ '/estadistica' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Estadisticas</a>  
+            <a [routerLink]="[ '/home' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Visita</a>
+            <a [routerLink]="[ '/agencia' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Agencias Turisticas</a>
           </div>
           <div class="lg:flex lg:space-x-4 lg:ml-4">
               <button class="mt-4 lg:mt-0 bg-white text-blue-500 py-2 px-4 rounded hover:bg-gray-100">Iniciar sesión</button>

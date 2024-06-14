@@ -9,13 +9,13 @@ import { DataBoyaca } from '../model/dataBoyaca';
 })
 export class DataBoyacaService {
 
-  constructor() { }
+  constructor( private http: HttpClient) { }
 
-   private http=inject(HttpClient)
+  
   public url:string="http://localhost:8000/"
 
-  public get_top_by_indicador_ano(indicadorName:string,ano:number):Observable<DataBoyaca[]>{
-      return this.http.get<DataBoyaca[]>(`${this.url}getAgenciasIn?municipio=${indicadorName}&ano=${ano}`)
+  public get_top_by_indicador_ano(indicadorName:string,ano:string):Observable<DataBoyaca[]>{
+      return this.http.get<DataBoyaca[]>(`${this.url}getTopByIndicadorAno?indicadorName=${indicadorName}&ano=${ano}`)
   }
 
 
