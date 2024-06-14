@@ -1,0 +1,29 @@
+<header class="bg-blue-600 text-white">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="flex items-center space-x-4">
+        <img src="assets/logo.png" alt="Logo" class="h-10">
+        <span class="text-2xl font-bold">Turismo</span>
+      </div>
+      <nav class="space-x-6 hidden md:flex">
+        <a href="#home" class="hover:text-gray-300">Inicio</a>
+        <a href="#destinations" class="hover:text-gray-300">Destinos</a>
+        <a href="#services" class="hover:text-gray-300">Servicios</a>
+        <a href="#contact" class="hover:text-gray-300">Contacto</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menu-btn" class="focus:outline-none">
+          <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24">
+            <path d="M4 5h16M4 12h16m-7 7h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="menu" class="md:hidden hidden">
+      <nav class="px-4 pt-4 pb-4 space-y-1 bg-blue-700">
+        <a href="#home" class="block text-white py-2 px-4 hover:bg-blue-600 rounded">Inicio</a>
+        <a href="#destinations" class="block text-white py-2 px-4 hover:bg-blue-600 rounded">Destinos</a>
+        <a href="#services" class="block text-white py-2 px-4 hover:bg-blue-600 rounded">Servicios</a>
+        <a href="#contact" class="block text-white py-2 px-4 hover:bg-blue-600 rounded">Contacto</a>
+      </nav>
+    </div>
+  </header>
