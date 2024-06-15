@@ -1,16 +1,20 @@
-<section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto" bis_skin_checked="1">
-        <div class="flex flex-wrap w-full mb-20" bis_skin_checked="1">
-            <div class="lg:w-1/2 w-full mb-6 lg:mb-0" bis_skin_checked="1">
-                <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">¿Que puedo hacer aqui?</h1>
-                <div class="h-1 w-20 bg-indigo-500 rounded" bis_skin_checked="1"></div>
-            </div>
-            <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">En esta seccion podras consultar informacion,
-                reelvante de cada municipio del departamento...
-            </p>
-        </div>
+<section class="banner">
+    <div
+      class="bg-cover bg-center bg-blue-500 text-white relative py-20"
+      style="background-image: url('/assets/banners/lagodetota.jpg')"
+    >
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      <div class="container mx-auto text-center relative z-1">
+        <h1 class="text-4xl md:text-6xl font-bold mb-10 py-10">
+          Encuentra datos interesantes
+        </h1>
+        <p class="text-lg md:text-xl mb-2 py-2">
+           
+        </p>
+      </div>
     </div>
-</section>
+  </section>
+
 
 
 
@@ -19,11 +23,11 @@
 <div class="ml-5 mr-5 h-full mt-4 flex justify-items-center justify-center">
     <form action="" class="flex gap-6">
         <label class="font-bold text-3xl" for="">Indicador:</label>
-        <select class="bg-gray-100 text-black bg-opacity-75h-10 w-36 p-0 rounded-md " name="" id="" (change)="cambioIndicador($event)">
+        <select class="bg-gray-100 text-black bg-opacity-75h-10 w-50 p-0 rounded-md " name="" id="" (change)="cambioIndicador($event)">
             <option value="Colegios Amigos del Turismo">Colegios Amigos del Turismo</option>
             <option value="Establecimientos de alojamiento turÃ­stico con registro en el RNT">Establecimientos de
                 alojamiento turístico con registro en el RNT</option>
-            <option value="GuÃ­as de turismo activos en el RNT">Guías de turismo activos en el RNT</option>
+            <option value="GuÃ­as de turismo activos en el RNT" selected>Guías de turismo activos en el RNT</option>
             <option value="Turismo interno">Turismo interno</option>
             <option value="Visitantes a Parques Nacionales Naturales">Visitantes a Parques Nacionales Naturales</option>
             <option value="Visitante interno">Visitante interno</option>
@@ -35,7 +39,7 @@
             <option value="2019">2019</option>
             <option value="2020">2020</option>
             <option value="2018">2018</option>
-            <option value="2021">2021</option>
+            <option value="2021" selected>2021</option>
             <option value="2023">2023</option>
         </select>
 
