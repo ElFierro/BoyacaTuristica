@@ -16,7 +16,7 @@ export const routes: Routes = [
         component: HowToGetComponent
     },
     {
-        path:'hotel',component:HotelComponent
+        path:'servicios',component:HotelComponent
     },
     {path:'agencia',component:AgenciasComponent},
     {path:'estadistica',component:EstadisticasComponent},

@@ -19,6 +19,9 @@ export class EstadisticasComponent {
   resultados:DataBoyaca[]=[]
 
   constructor(private serviceData:DataBoyacaService) {
+    this.ano="2021"
+    this.indicador="GuÃ­as de turismo activos en el RNT"
+    this.consultar()
     
   }
 
