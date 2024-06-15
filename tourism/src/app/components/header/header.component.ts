@@ -7,6 +7,7 @@ import { LoginModalComponent } from "../auth/login-modal/login-modal.component";
 import { RegisterModalComponent } from "../auth/register-modal/register-modal.component";
 import { ModalService } from '../../service/modal.service';
 import { NgIf } from '@angular/common';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
     selector: 'app-header',
@@ -19,25 +20,19 @@ export class HeaderComponent {
   isMenuHidden = true;
   isLoginModalOpen = false;
   isRegisterModalOpen = false;
-  
-  toggleMenu() {
-    this.isMenuHidden = !this.isMenuHidden;
+
+  constructor(private modalService: ModalService, public authService: AuthService) {
+    this.modalService.modalState$.subscribe((isOpen) => {
+      this.isLoginModalOpen = isOpen;
+      this.isRegisterModalOpen = isOpen;
+    });
   }
 
+  openLoginModal() {
+    this.isLoginModalOpen = true;
+  }
 
-  
-    constructor(private modalService: ModalService) {
-      this.modalService.modalState$.subscribe((isOpen) => {
-        this.isLoginModalOpen = isOpen;
-        this.isRegisterModalOpen = isOpen;
-      });
-    }
-  
-    openLoginModal() {
-      this.isLoginModalOpen = true;
-    }
-  
-    openRegisterModal() {
-      this.isRegisterModalOpen = true;
-    }
+  openRegisterModal() {
+    this.isRegisterModalOpen = true;
+  }
   }

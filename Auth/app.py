@@ -4,12 +4,14 @@ from flask_jwt_extended import JWTManager, create_access_token, jwt_required, ge
 from models import db, User
 from config import Config
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_cors import CORS  # Importa CORS
 
 app = Flask(__name__)
 app.config.from_object(Config)
 
 db.init_app(app)
 jwt = JWTManager(app)
+CORS(app)  # Habilita CORS para todas las rutas y orígenes
 
 # Usar una bandera para inicializar la base de datos solo una vez
 db_initialized = False

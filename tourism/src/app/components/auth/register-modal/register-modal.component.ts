@@ -2,6 +2,7 @@ import { Component, OnInit, inject } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ModalService } from '../../../service/modal.service';
 import { AuthService } from '../../../service/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-register-modal',
@@ -35,13 +36,22 @@ export class RegisterModalComponent  implements OnInit {
       const { email, password } = this.registerForm.value;
       this.authService.register(email, password).subscribe(
         response => {
-          // Manejo de la respuesta del servidor
-          console.log('Registro exitoso:', response);
+         
           this.closeModal();
+          Swal.fire({
+            icon: 'success',
+            title: 'Registro exitoso',
+            text: '¡Usuario creado correctamente!'
+          });
         },
         error => {
           // Manejo de errores
           console.error('Error en el registro:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Error en el registro',
+            text: 'Ha ocurrido un problema. Por favor, inténtalo nuevamente.'
+          });
         }
       );
     }
