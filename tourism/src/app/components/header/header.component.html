@@ -2,6 +2,7 @@
 <header class="bg-gray-700 bg-opacity-70 text-white shadow-lg fixed top-0 w-full z-10">
     <div class="container mx-auto flex items-center justify-between py-4 px-6">
         <div class="flex items-center">
+            <img src="\assets\images\generales\BoyacaTuristica.png" alt="Logo" class="w-10 h-10 mr-2"> <!-- Aquí colocas la ruta a tu logo y defines el tamaño -->
             <span class="text-xl font-bold">Boyacá Turística</span>
         </div>
         <div class="block lg:hidden">
@@ -13,15 +14,18 @@
         </div>
         <nav id="menu" [class.hidden]="isMenuHidden" class="lg:flex lg:items-center lg:w-auto w-full">
             <div class="lg:flex lg:space-x-4">
-                <a href="#inicio" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Inicio</a>
-                <a href="#destinos" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Destinos</a>
-                <a href="#actividades" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Actividades</a>
-                <a href="#contacto" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Contacto</a>
-                <a href="#contacto" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Contacto</a>
-            </div>
+                <a href="/home" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Inicio</a>
+                <a [routerLink]="[ '/hotel' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Hoteles</a>
+                <a [routerLink]="[ '/estadistica' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Estadisticas</a>  
+                <a [routerLink]="[ '/home' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Visita</a>
+                <a [routerLink]="[ '/agencia' ]" routerLinkActive="active" class="block lg:inline-block mt-4 lg:mt-0 hover:underline">Agencias Turisticas</a>
+              </div>
             <div class="lg:flex lg:space-x-4 lg:ml-4">
-                <button class="mt-4 lg:mt-0 bg-white text-blue-500 py-2 px-4 rounded hover:bg-gray-100 shadow-md">Iniciar sesión</button>
-                <button class="mt-4 lg:mt-0 bg-blue-500 text-white py-2 px-4 rounded hover:bg-yellow-600 shadow-md">Registrarse</button>
+                <button class="mt-4 lg:mt-0 bg-gray-200 text-blue-700 py-2 px-4 rounded hover:bg-gray-100 hover:text-blue-500 shadow-md" (click)="openLoginModal()">Iniciar sesión</button>
+                <button class="mt-4 lg:mt-0 bg-blue-600 text-gray-200 py-2 px-4 rounded hover:bg-blue-500 hover:text-gray-100 shadow-md" (click)="openRegisterModal()">Registrarse</button>
             </div>
         </nav>
     </div>
+
+    <app-login-modal *ngIf="isLoginModalOpen"></app-login-modal>
+<app-register-modal *ngIf="isRegisterModalOpen"></app-register-modal>
